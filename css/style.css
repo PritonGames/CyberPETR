@@ -1,0 +1,20 @@
+body{
+  box-sizing: border-box;
+  background-color: chocolate;
+}
+.canvas-box {
+  position: absolute;
+  background-color: #FFFFFF;
+  margin: 0 auto;
+  width: 2700px;
+  height: 500px;
+  left: 0px;
+}
+.frame {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid white;
+}
