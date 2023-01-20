@@ -22,6 +22,8 @@ let jump = {
   length:50,
   height:0,
 }
+let deltaTime = 0
+let lastUpdate = 0
 
 function keydown(e) {
   const {key} = e
@@ -48,7 +50,9 @@ function keyup(e) {
 }
 function animation() {
   // frameAnimation
-  requestAnimationFrame(animation);
+  // requestAnimationFrame(animation);
+  // deltaTime = currentTime - lastUpdate
+
   //clear
   context.clearRect(0, 0, canvas.width, canvas.height);
   // background
@@ -82,8 +86,8 @@ function animation() {
     jump.height = 0
    }
 }
-animation();
+// animation();
 document.addEventListener('keydown',keydown)
 document.addEventListener('keyup',keyup)
-
+setInterval(animation, 10);
 
