@@ -145,6 +145,7 @@ function loop() {
   rendercanvas();
   renderplayer();
   renderplat();
+  // console.log(1)
 }
 createplat();
 // Adding the event listeners
