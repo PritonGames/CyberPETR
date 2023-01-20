@@ -24,7 +24,7 @@ let jump = {
 }
 let deltaTime = 0
 let lastUpdate = 0
-
+let maxInteval = 40
 function keydown(e) {
   const {key} = e
   if(key == 'ArrowRight'|| e.keyCode == '68') {
@@ -69,24 +69,26 @@ function animation(currentTime = 0) {
   context.stroke();
   context.closePath();
   // animUpdate
-   if(keys.right == true){
-    player.x += player.x_v * correction
-   }
-   if(keys.left == true){
-    player.x -= player.x_v * correction
-   }
-   if(player.jump == true){
-    jump.count++
-    jump.height = 4 * jump.length*Math.sin(Math.PI*jump.count/jump.length)
-   }
-   if(jump.count>jump.length){
-    jump.count=0
-    player.jump=false
-    jump.height = 0
-   }
-   console.clear()
-   console.log('fps:',fps)
-   lastUpdate = currentTime
+  if(deltaTime < maxInteval){
+    if(keys.right == true){
+      player.x += player.x_v * correction
+     }
+     if(keys.left == true){
+      player.x -= player.x_v * correction
+     }
+     if(player.jump == true){
+      jump.count++
+      jump.height = 4 * jump.length*Math.sin(Math.PI*jump.count/jump.length)
+     }
+     if(jump.count>jump.length){
+      jump.count=0
+      player.jump=false
+      jump.height = 0
+     }
+  }
+  console.clear()
+  console.log('fps:',fps)
+  lastUpdate = currentTime
 }
 animation();
 document.addEventListener('keydown',keydown)
