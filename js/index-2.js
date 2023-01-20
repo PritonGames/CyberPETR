@@ -6,7 +6,7 @@ canvas.width = 1800;
 let player = {
   x: 100,
   y: 400,
-  x_v: 5,
+  x_v: 500,
   y_v: 0,
   jump: false,
   width: 40,
@@ -22,9 +22,11 @@ let jump = {
   length:50,
   height:0,
 }
+let deltaTime = 0
+let lastUpdate = 0
+
 function keydown(e) {
   const {key} = e
-  console.log(e)
   if(key == 'ArrowRight'|| e.keyCode == '68') {
     keys.right = true
   }
@@ -33,7 +35,6 @@ function keydown(e) {
   }
   if(key == 'ArrowUp'|| e.keyCode == '32') {
     player.jump = true
-    console.log(player.jump)
   }
 }
 function keyup(e) {
@@ -45,9 +46,12 @@ function keyup(e) {
     keys.left = false
   }
 }
-function animation() {
+function animation(currentTime = 0) {
   // frameAnimation
   requestAnimationFrame(animation);
+  deltaTime = currentTime - lastUpdate
+  correction = deltaTime / 1000
+  let fps = 1000/ deltaTime
   //clear
   context.clearRect(0, 0, canvas.width, canvas.height);
   // background
@@ -66,10 +70,10 @@ function animation() {
   context.closePath();
   // animUpdate
    if(keys.right == true){
-    player.x += player.x_v
+    player.x += player.x_v * correction
    }
    if(keys.left == true){
-    player.x -= player.x_v
+    player.x -= player.x_v * correction
    }
    if(player.jump == true){
     jump.count++
@@ -80,8 +84,12 @@ function animation() {
     player.jump=false
     jump.height = 0
    }
+   console.clear()
+   console.log('fps:',fps)
+   lastUpdate = currentTime
 }
 animation();
 document.addEventListener('keydown',keydown)
 document.addEventListener('keyup',keyup)
+
 
