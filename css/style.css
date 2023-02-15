@@ -1,14 +1,15 @@
 body{
   box-sizing: border-box;
-  background-color: chocolate;
+  background-color: rgb(121, 121, 121);
 }
 .canvas-box {
   position: absolute;
   background-color: #FFFFFF;
   margin: 0 auto;
-  width: 2700px;
+  width: 1800px;
   height: 500px;
   left: 0px;
+  top: -500px;
 }
 .frame {
   position: relative;

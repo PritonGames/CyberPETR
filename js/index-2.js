@@ -136,30 +136,42 @@ function animation(currentTime = 0) {
     if (player.x < backgroundCounter) {
       backgroundBoolean = false;
     }
-    let i = -1;
-    // console.log(sum2)
-    if (
-      platforms[0].x < player.x &&
-      player.x < platforms[0].x + platforms[0].width &&
-      platforms[0].y < sum2 &&
-      sum2 < platforms[0].y + 10
-    ) {
-      i = 1;
-    } else {
-      i = -1
-    }
-    if(sum2 > 330 && player.x > platforms[0].x && player.x < platforms[0].x + platforms[0].height + platforms[0].width){
-      i = -1
-      jump.length = 18
-    }
-    if (i == 1) {
-      player.y = platforms[0].y - player.height
-      jump.length = 20
-      player.jump = false
-    } else if (i == -1 && player.x > platforms[0].x + platforms[0].width || player.x < 500 && player.x + player.width < 500){
-      player.y = 400
-      jump.length = 50
-    }
+    
+
+
+
+
+
+
+
+
+
+
+    // hitbox
+    // let i = -1;
+    // // console.log(sum2)
+    // if (
+    //   platforms[0].x < player.x &&
+    //   player.x < platforms[0].x + platforms[0].width &&
+    //   platforms[0].y < sum2 &&
+    //   sum2 < platforms[0].y + 10
+    // ) {
+    //   i = 1;
+    // } else {
+    //   i = -1
+    // }
+    // if(sum2 > 330 && player.x > platforms[0].x && player.x < platforms[0].x + platforms[0].height + platforms[0].width){
+    //   i = -1
+    //   jump.length = 18
+    // }
+    // if (i == 1) {
+    //   player.y = platforms[0].y - player.height
+    //   jump.length = 20
+    //   player.jump = false
+    // } else if (i == -1 && player.x > platforms[0].x + platforms[0].width || player.x < 500 && player.x + player.width < 500){
+    //   player.y = 400
+    //   jump.length = 50
+    // }
     // if (player.x >= 500 && player.x <= 700 && jump.count > 49) {
     //   player.y = 280 - player.height;
     // } else {
@@ -167,7 +179,6 @@ function animation(currentTime = 0) {
     // console.log(jump.height)
   }
   renderplat();
-
   lastUpdate = currentTime;
 }
 createplat();
