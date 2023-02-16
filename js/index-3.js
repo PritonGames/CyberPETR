@@ -30,17 +30,19 @@ class PLayer {
     this.onPlatfrom = true;
   }
   draw() {
-    context.drawImage(
-      idle,
-      320 * this.frames,
-      0,
-      320,
-      320,
-      this.position.x,
-      this.position.y,
-      this.width,
-      this.height
-    );
+    idle.onload = function() {
+      context.drawImage(
+        idle,
+        320 * this.frames,
+        0,
+        320,
+        320,
+        this.position.x,
+        this.position.y,
+        this.width,
+        this.height
+      );
+    }
     // context.fillRect(this.position.x,this.position.y,this.width,this.height)
   }
   update() {
