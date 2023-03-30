@@ -44,7 +44,7 @@ class PLayer {
       );
     }
     idle.onerror = function() {
-      alert("Ошибка загрузки ");
+      console.log("Ошибка загрузки");
     };
     // context.fillRect(this.position.x,this.position.y,this.width,this.height)
   }
