@@ -43,6 +43,9 @@ class PLayer {
         this.height
       );
     }
+    idle.onerror = function() {
+      alert("Ошибка загрузки ");
+    };
     // context.fillRect(this.position.x,this.position.y,this.width,this.height)
   }
   update() {
