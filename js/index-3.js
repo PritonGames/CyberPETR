@@ -1,7 +1,7 @@
 // import idleReverse from '/demka/img/img.idle.png'
 // import idle from '../img/idle.png'
 const idle = new Image();
-idle.src = "../img/idleAnimation.png";
+idle.src = "../CyberPETR/img/idleAnimation.png";
 idle.onload = function () {
   const canvas = document.querySelector(".canvas");
   const context = canvas.getContext("2d");
