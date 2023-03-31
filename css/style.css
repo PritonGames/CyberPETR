@@ -19,3 +19,8 @@ body{
   overflow: hidden;
   border: 1px solid white;
 }
+.canvas {
+  background-image: url(../img/backgroumnd.jpg);
+  background-size: 2145px 672px;
+  background-position-y: -275px;
+}
